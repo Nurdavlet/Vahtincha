@@ -7,11 +7,19 @@ import defaults from "../global/default.json";
 class App extends React.Component {
   constructor() {
     super();
-    this.state = {data: defaults};
+    this.state = {data: defaults, note: { text: "Введите текст заметки", color: "#dcdcdc" }};
     this.st = this.st.bind(this);
+    this.note = this.note.bind(this);
+    this.textreaChange = this.textreaChange.bind(this);
+  }
+  textreaChange(data) {
+    this.setState({ note: {text: data.value}})
+  }
+  note(data) {
+    this.setState({ note: data });
   }
   st(data) {
-    this.setState({data: data})
+    this.setState({ data: data })
   }
   async componentDidMount() {
     let response = await fetch();
@@ -22,6 +30,7 @@ class App extends React.Component {
     }
   }
   render() {
+
     return (
       <div className="App">
         
@@ -31,15 +40,18 @@ class App extends React.Component {
         <div className='bodier'>
           <div className='hats'>
             
-             заметки
+             Заметки {this.state.note.id}
           </div>
           <div className='containern'>
             <div className='notes'>
               {this.state.data.map(data => {
+                let click = () => {
+                  this.note(data);
+                }
                 return(
                   <>
-                    <div className='note' style={{backgroundColor: data.color}}>
-                      {data.text}
+                    <div onClick={click} className='note' style={{backgroundColor: data.color}}>
+                      { data.text }
                     </div>
 
               </>    
@@ -49,7 +61,7 @@ class App extends React.Component {
             </div>   
             <div className='tools'>
               <form action='' method='POST' name='note'>
-                <textarea className='formtext' rows="10" cols="45"  name='text'  > Введите текст заметки</textarea>
+                <textarea className='formtext' rows="10" cols="45" value={ this.state.note.text } onChange={this.textreaChange}  name='text' style={{backgroundColor: this.state.note.color}}  >  </textarea>
                 <p> Выберите цвет <input type="color" name="color"/> </p>
                 <input type="submit" value="сохранить"/>
               </form>

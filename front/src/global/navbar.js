@@ -21,8 +21,8 @@ export function Navbar () {
                 <ul>
                     <li><Link to="/" className="link">Главная страница</Link></li>
                     <li><Link to="/about" className="link">О проекте</Link></li>
-                    <li><Link to="/contact" className="link">Заметки</Link></li>
-                    <li><Link to="/notes" className="link">Контакты</Link></li>
+                    {/* <li><Link to="/note" className="link">Заметки</Link></li> */}
+                    <li><Link to="/contact" className="link">Контакты</Link></li>
                 </ul>
 
                 <div className="navbaricons">

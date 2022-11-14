@@ -16,15 +16,15 @@ class Footer extends React.Component {
             <div class="footer-col">
                 <h4>Компания</h4>
                 <ul>
-                <li><a href="#">О нас</a></li>
-                <li><a href="#">наш сервис</a></li>
+                <li><a href="/about">О нас</a></li>
+                <li><a href="/contact">наш сервис</a></li>
                 <li><a href="#">политика конфиденциальности</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Помощь</h4>
                 <ul>
-                <li><a href="#">ЧаВо</a></li>
+                <li><a href="/contact">ЧаВо</a></li>
 
                 </ul>
             </div>
