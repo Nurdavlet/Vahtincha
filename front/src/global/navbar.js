@@ -20,9 +20,10 @@ export function Navbar () {
                 
                 <ul>
                     <li><Link to="/" className="link">Главная страница</Link></li>
-                    <li><Link to="/about" className="link">О проекте</Link></li>
-                    {/* <li><Link to="/note" className="link">Заметки</Link></li> */}
+                    <li><Link to="/about" className="link">Новости</Link></li>
+                    <li><Link to="/policy" className="link">Политика конфиденциальности</Link></li>
                     <li><Link to="/contact" className="link">Контакты</Link></li>
+                    <li><Link to="/help" className="link">Помощь</Link> </li>
                 </ul>
 
                 <div className="navbaricons">
