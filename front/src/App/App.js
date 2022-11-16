@@ -5,7 +5,7 @@ import {Navbar} from "../global/navbar";
 import Footer from '../Footer/Footer';
 import defaults from "../global/default.json";
 
-const url = "http://localhost:5001";
+const url = "http://139.144.170.158:5001";
 class App extends React.Component {
   constructor() {
     super();
@@ -53,6 +53,9 @@ class App extends React.Component {
   }
   ubdatenotes() {
     this.fetchfunc('/api/form', {react: 'read'}).then(data => {
+      if (!Array.isArray(data)){
+        data = [data];
+      }
       this.setState({data: data});
     })   
   }
